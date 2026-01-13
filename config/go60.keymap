@@ -19,10 +19,8 @@
 
 // layers
 #define LAYER_Base 0
-#define LAYER_Keypad 1
-#define LAYER_SymbolNav 2
-#define LAYER_Magic 3
-#define LAYER_Factory 4
+#define LAYER_Symbol 1
+#define LAYER_Magic 2
 
 / {
     input_processors {
@@ -43,22 +41,7 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-        keypad_td: keypad_td {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo LAYER_Keypad>, <&to LAYER_Keypad>;
-        };
-
-        symbol_nav_td: symbol_nav_td {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo LAYER_SymbolNav>, <&to LAYER_SymbolNav>;
-        };
-
-        bt_0: bt_0 {
-            compatible = "zmk,behavior-tap-dance";
+        bt_0: bt_0 { compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&bt_select_0>, <&bt BT_DISC 0>;
@@ -80,6 +63,136 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&bt_select_3>, <&bt BT_DISC 3>;
+        };
+        HRM_LPinky: HRM_LPinky {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LPinky";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <210>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 18 19 20 21 22 42 43 44 45 >;
+
+        };
+        HRM_RPinky: HRM_RPinky {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RPinky";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <210>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 13 14 15 16 17 29 37 38 39 40 41  >;
+
+        };
+        HRM_LRing: HRM_LRing {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LRing";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <176>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 18 19 20 21 22 42 43 44 45 >;
+        };
+        HRM_RRing: HRM_RRing {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RRing";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <176>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 13 14 15 16 17 29 37 38 39 40 41  >;
+        };
+        HRM_LMiddle: HRM_LMiddle {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LMiddle";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <139>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 18 19 20 21 22 42 43 44 45 >;
+        };
+        HRM_RMiddle: HRM_RMiddle {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RMiddle";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <150>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 13 14 15 16 17 29 37 38 39 40 41  >;
+        };
+        HRM_LIndex: HRM_LIndex {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LIndex";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <139>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 18 19 20 21 22 42 43 44 45 >;
+        };
+        HRM_RIndex: HRM_RIndex {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RIndex";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+
+            tapping-term-ms = <150>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = < 25 26 27 28 31 32 33 34 49 50 51 52 54 55 56 57 58 59 13 14 15 16 17 29 37 38 39 40 41  >;
         };
     };
 
@@ -124,34 +237,26 @@
         compatible = "zmk,keymap";
         layer_Base {
             bindings = <
-            &kp EQUAL  &kp N1     &kp N2   &kp N3    &kp N4  &kp N5                                                      &kp N6    &kp N7     &kp N8    &kp N9    &kp N0           &kp MINUS
-              &kp TAB   &kp Q      &kp W    &kp E     &kp R   &kp T                                                       &kp Y     &kp U      &kp I     &kp O     &kp P            &kp BSLH
-              &kp ESC   &kp A      &kp S    &kp D     &kp F   &kp G                                                       &kp H     &kp J      &kp K     &kp L  &kp SEMI             &kp SQT
- &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
-                               &kp GRAVE  &kp DEL  &kp BSPC                                                                      &kp LGUI   &kp LBKT  &kp RBKT
-                                                     &symbol_nav_td  &kp LSHFT  &kp LCTRL     &kp LALT  &kp SPACE  &mt RALT RET
+            &kp C_BRI_DN  &kp C_BRI_UP  &none   &kp GRAVE    &kp C_PREV   &kp C_PP                                      &kp C_PP    &kp C_NEXT &kp MINUS   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
+              &kp TAB   &kp Q      &kp W    &kp E     &kp R   &kp T                                                       &kp Y     &kp U      &kp I     &kp O     &kp P            &kp TAB
+              &kp ESC   &HRM_LPinky LALT A &HRM_LRing LCTRL S &HRM_LMiddle LGUI D &HRM_LIndex LSHFT F   &kp G            &kp H     &HRM_RIndex RSHFT J   &HRM_RMiddle RGUI K     &HRM_RRing RCTRL L  &HRM_RPinky RALT SEMI  &kp SQT
+              &kp CAPS   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH             &caps_word
+                            &magic LAYER_Magic 0 &kp LEFT  &kp RIGHT                                                        &kp DOWN   &kp UP  &rgb_ug RGB_TOG
+
+                                                           &kp BSPC  &lt LAYER_Symbol RET  &kp DEL                      &kp BSPC  &lt LAYER_Symbol RET  &kp SPACE 
             >;
         };
 
-        layer_Keypad {
+        layer_Symbol {
             bindings = <
-                &none     &kp F1     &kp F2     &kp F3     &kp F4         &kp F5                                                 &kp F6     &kp F7      &kp F8        &kp F9          &kp F10        &kp F11
-               &trans      &none   &kp HOME     &kp UP    &kp END      &kp PG_UP                                              &kp KP_N7  &kp KP_N8   &kp KP_N9  &kp KP_MINUS     &kp KP_SLASH        &kp F12
-               &trans  &kp LC(Y)   &kp LEFT   &kp DOWN  &kp RIGHT      &kp PG_DN                                              &kp KP_N4  &kp KP_N5   &kp KP_N6   &kp KP_PLUS  &kp KP_MULTIPLY     &kp KP_NUM
- &magic LAYER_Magic 0  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(V))                                              &kp KP_N1  &kp KP_N2   &kp KP_N3  &kp KP_ENTER        &kp EQUAL &to LAYER_Base
-                                      &none     &trans     &trans                                                                        &kp KP_N0  &kp KP_DOT      &kp BSPC
-                                                             &mo LAYER_SymbolNav  &trans  &trans              &trans  &trans  &kp KP_N0
-            >;
-        };
+            &kp C_BRI_DN  &kp C_BRI_UP  &none   &kp TILDE    &kp C_PREV   &kp C_PP                                      &kp C_PP    &kp C_NEXT &kp UNDER   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_MUTE
+            &kp CARET  &kp N1     &kp N2   &kp N3    &kp N4  &kp N5                                                      &kp N6    &kp N7     &kp N8    &kp N9    &kp N0           &kp DLLR
+              &kp SQT   &kp STAR   &kp LBKT    &kp RBKT     &kp PLUS   &kp AT                                               &kp HASH     &kp EQUAL      &kp LPAR     &kp RPAR  &kp COLON   &kp DQT
+              &none   &kp EXCL    &kp LBRC    &kp RBRC     &kp PRCNT   &kp BSLH                                             &kp PIPE     &kp AMPS  &kp LT   &kp GT  &kp QMARK     &none
+ 
+                               &mkp MB1   &mmv MOVE_LEFT  &mmv MOVE_RIGHT                                                                      &mmv MOVE_DOWN &mmv MOVE_UP  &mkp MB2
 
-        layer_SymbolNav {
-            bindings = <
-              &kp INS    &kp F1     &kp F2    &kp F3     &kp F4     &kp F5                                       &kp F6    &kp F7           &kp F8       &kp F9          &kp F10    &kp F11
-             &kp SLCK  &kp EXCL   &kp HOME    &kp UP    &kp END  &kp PG_UP                                     &kp LPAR  &kp RPAR           &kp UP    &kp PRCNT        &kp K_APP    &kp F12
-             &kp CAPS    &kp AT   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                                     &kp DLLR  &kp LEFT         &kp DOWN    &kp RIGHT  &kp PAUSE_BREAK  &kp PSCRN
- &magic LAYER_Magic 0  &kp HASH   &kp LBKT  &kp RBKT   &kp LBRC   &kp RBRC                                     &kp AMPS  &kp STAR        &kp UNDER     &kp PLUS        &kp LSHFT  &kp LCTRL
-                                 &kp CARET    &trans     &trans                                                            &trans  &kp LC(LS(TAB))  &kp LC(TAB)
-                                                            &to LAYER_Base  &trans  &trans       &trans  &trans  &trans
+                                                           &kp BSPC  &none  &kp DEL                     &kp BSPC  &none  &kp SPACE 
             >;
         };
 
@@ -160,20 +265,11 @@
   &bt BT_CLR     &kp C_BRI_DN     &kp C_BRI_UP       &kp C_PREV       &kp C_NEXT         &kp C_PP                                &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none   &none    &bt BT_CLR_ALL
  &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                     &none         &none         &none   &none   &none       &bootloader
   &sys_reset  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                     &none         &none         &none   &none   &none        &sys_reset
-       &none            &none            &bt_0            &bt_1            &bt_2            &bt_3                                     &none         &none         &none   &none   &none &to LAYER_Factory
-                                  &out OUT_USB            &none            &none                                                                    &none         &none   &none
-                                                                                            &none   &none   &none     &none   &none   &none
-            >;
-        };
+       &none            &none            &bt_0            &bt_1            &bt_2            &bt_3                                     &none         &none         &none   &none   &none         &none 
 
-        layer_Factory {
-            bindings = <
- &kp N0  &kp N4  &kp N8  &kp N3  &kp N8  &kp N3                                       &kp N3  &kp N8  &kp N3  &kp N8  &kp N4  &kp N0
- &kp N1  &kp N5  &kp N9  &kp N4  &kp N9  &kp N4                                       &kp N4  &kp N9  &kp N4  &kp N9  &kp N5  &kp N1
- &kp N2  &kp N6  &kp N0  &kp N5  &kp N0  &kp N5                                       &kp N5  &kp N0  &kp N5  &kp N0  &kp N6  &kp N2
- &kp N3  &kp N7  &kp N1  &kp N6  &kp N1  &kp N6                                       &kp N6  &kp N1  &kp N6  &kp N1  &kp N7  &kp N3
-                 &kp N2  &kp N7  &kp N2                                                       &kp N2  &kp N7  &kp N2
-                                          &kp N7  &kp N8  &kp N9      &kp N9  &kp N8  &kp N7
+                                  &out OUT_USB            &none            &none                                                                    &none         &none   &none
+
+                                                                              &none   &none   &none           &none   &none   &none
             >;
         };
     };
