@@ -201,12 +201,18 @@
             label = "MMV_FAST";
             time-to-max-speed-ms = <60>;
             accel-interval-ms = <8>;
-            max-speed = <2000>;
-            move-scale = <40>;
+            move-scale = <2>;
             delay-ms = <0>;
         };
 
 
+       msc_fast: mouse_scroll_fast {
+            compatible = "zmk,behavior-mouse-scroll";
+            label = "msc_FAST";
+            scroll-interval-ms = <20>;
+            scroll-scale = <2>;
+            delay-ms = <0>;
+        };
 
 
     };
@@ -257,7 +263,7 @@
           };
 
         navigation_combo {
-            timeout-ms = <81>;
+            timeout-ms = <2000>;
             key-positions = <55 58>;
             bindings = <&mo LAYER_Navi>;
           };
@@ -272,6 +278,7 @@
               &kp TAB   &kp Q      &kp W    &kp E     &kp R   &kp T                                                       &kp Y     &kp U      &kp I     &kp O     &kp P            &kp TAB
               &kp ESC   &HRM_LPinky LALT A &HRM_LRing LCTRL S &HRM_LMiddle LGUI D &HRM_LIndex LSHFT F   &kp G            &kp H     &HRM_RIndex RSHFT J   &HRM_RMiddle RGUI K     &HRM_RRing RCTRL L  &HRM_RPinky RALT SEMI  &kp SQT
               &kp CAPS   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH             &caps_word
+
                             &magic LAYER_Magic 0 &kp LEFT  &kp RIGHT                                                        &kp DOWN   &kp UP  &rgb_ug RGB_TOG
 
                                                            &kp BSPC  &lt LAYER_Symbol RET  &kp DEL                      &kp BSPC  &lt LAYER_Symbol RET  &kp SPACE 
@@ -285,7 +292,7 @@
               &kp SQT   &kp STAR   &kp LBKT    &kp RBKT     &kp PLUS   &kp AT                                               &kp HASH     &kp EQUAL      &kp LPAR     &kp RPAR  &kp COLON   &kp DQT
               &none   &kp EXCL    &kp LBRC    &kp RBRC     &kp PRCNT   &kp BSLH                                             &kp PIPE     &kp AMPS  &kp LT   &kp GT  &kp QMARK     &none
  
-                               &mkp MB1   &mmv MOVE_LEFT  &mmv MOVE_RIGHT                                                                      &mmv MOVE_DOWN &mmv MOVE_UP  &mkp MB2
+                                &none   &none  &none                                                                      &none  &none  &none
 
                                                            &kp BSPC  &none  &kp DEL                     &kp BSPC  &none  &kp SPACE 
             >;
@@ -295,14 +302,15 @@
             bindings = <
             &kp C_BRI_DN  &kp C_BRI_UP  &none   &kp TILDE    &kp C_PREV   &kp C_PP                                      &kp C_PP    &kp C_NEXT &kp UNDER   &kp C_VOL_UP  &kp C_VOL_DN  &kp C_MUTE
             &none  &none  &none  &none  &none  &none                                                                       &none  &none  &none  &none  &none  &none
-            &none  &none  &mkp MB1   &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &none                                                &none  &mmv MOVE_DOWN &mmv MOVE_UP  &mkp MB2 &none  &none
-            &none  &none  &none  &none  &none  &none                                                                       &none  &none  &none  &none  &none  &none
+            &msc SCRL_LEFT  &msc SCRL_DOWN  &mkp MB1   &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &none                                        &none  &mmv MOVE_DOWN &mmv MOVE_UP  &mkp MB2 &msc SCRL_UP  &msc SCRL_LEFT
+            &msc_fast SCRL_LEFT  &msc_fast SCRL_DOWN &mkp MB1 &mmv_fast MOVE_LEFT  &mmv_fast MOVE_RIGHT &none                      &none  &mmv_fast MOVE_DOWN  &mmv_fast MOVE_UP  &mkp MB2 &msc_fast SCRL_UP &msc_fast SCRL_LEFT
  
                                 &none   &none  &none                                                                      &none  &none  &none
 
                                                            &kp BSPC  &none  &kp DEL                     &kp BSPC  &none  &kp SPACE 
             >;
         };
+
         layer_Magic {
             bindings = <
             &bt BT_CLR     &kp C_BRI_DN     &kp C_BRI_UP       &kp C_PREV       &kp C_NEXT         &kp C_PP                                &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none   &none    &bt BT_CLR_ALL
@@ -319,17 +327,9 @@
 };
 
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 3 1>;
-    layer_2 {
-        layers = <2>;
-        input-processors = <&zip_xy_scaler 9 1>;
-    };
+    input-processors = <&zip_xy_scaler 2 1>;
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 1 8>, <&zip_click_to_right_click_mapper>;
-    layer_4 {
-        layers = <4>;
-        input-processors = <&zip_xy_scaler 3 1>;
-    };
+    input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 1 16>, <&zip_click_to_right_click_mapper>;
 };
