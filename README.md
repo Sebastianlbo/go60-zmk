@@ -7,6 +7,16 @@ It favors homerow modifiers for fast typing with minimal hand movement,
 quick layer-taps for navigation, and a thin symbol layer so I can stay
 anchored on the home row while typing. ( Perfect to avoid carpal tunnel! )
 
+## Go60 Key Positions
+
+Reference image showing ZMK key positions (positional indices).
+
+ZMK does not reference keys by labels or legends, but by their physical
+position index in the keymap. These key positions—are used by features
+such as combos, hold-taps, macros, and other position-based behaviors.
+
+![Key Indeces](assets/keys_numbered.png)
+
 ## Layer Overview
 
 ### Base Layer
@@ -41,10 +51,10 @@ without reaching for a physical mouse.
 ## Features
 
 - Homerow-mod (HRM) behaviors with tuned tapping terms per finger.
-- Layer-tap thumbs for instant access to the symbol layer without sacrificing Enter.
-- Combo bindings to enter navigation layer easily while keeping symbol and Enter keys in position.
+- Layer-tap thumbs (hold 53 or 56) for instant access to the symbol layer without sacrificing Enter.
+- Combo bindings (hold 53 and 56) to enter navigation layer easily while keeping symbol and Enter keys in position.
 - Mouse-key bindings on the symbol layer for mouse use without leaving the keyboard.
-- Combos for frequently used characters (e.g., underscore) built around my workflow.
+- Combos for frequently used characters (e.g., underscore 52 and 57) built around my workflow.
 
 ## Building and loading Firmware into the Go60
 
@@ -52,4 +62,4 @@ without reaching for a physical mouse.
    `config/go60.keymap`.
 2. Push to GitHub to trigger the included “Build” workflow, or build locally
    using `nix-build config -o combined`.
-3. Flash the resulting `go60.uf2` artifact onto each side of the keyboard.
+   3.Flash the resulting `go60.uf2` artifact onto each side of the keyboard.
