@@ -226,7 +226,23 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
+        cmd_mb1: cmd_mb1 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LGUI>,
+                <&macro_tap   &mkp MB1>,
+                <&macro_release &kp LGUI>;
       };
+      shift_mb1: shift_mb1 {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LSHFT>,
+                <&macro_tap   &mkp MB1>,
+                <&macro_release &kp LSHFT>;
+      };
+    };
 
       combos {
         compatible = "zmk,combos";
@@ -275,7 +291,7 @@
         layer_Navi {
             bindings = <
             &trans &trans &trans &trans &trans &trans                                                                    &trans &trans &trans &trans &trans &trans
-            &none  &none  &msc MOVE_Y(30)  &none  &none  &none                                                                       &none  &none  &none  &msc MOVE_Y(-30) &none  &none
+            &none  &none  &msc MOVE_Y(30)  &cmd_mb1  &none  &none                                                                       &none  &none  &shift_mb1  &msc MOVE_Y(-30) &none  &none
             &msc MOVE_X(-10)  &msc MOVE_Y(10)  &mkp MB1   &mmv MOVE_X(-550)  &mmv MOVE_X(500)  &none                                        &none  &mmv MOVE_Y(500)  &mmv MOVE_Y(-550)  &mkp MB2 &msc MOVE_Y(-10)  &msc MOVE_X(10)
             &none &none &mkp MB1 &mmv MOVE_X(-1090)  &mmv MOVE_X(1200) &none                                                  &none  &mmv MOVE_Y(1200)  &mmv MOVE_Y(-1090)  &mkp MB2 &none &none
  
@@ -291,7 +307,6 @@
            &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                     &none         &none         &none   &none   &none       &bootloader
             &sys_reset  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                     &none         &none         &none   &none   &none        &sys_reset
                  &out OUT_USB     &none            &bt_0            &bt_1            &bt_2            &bt_3                                     &none         &none         &none   &none   &none         &none 
-
                                   &none            &none             &bt BT_CLR_ALL                                                                    &none         &none   &none
 
                                                                               &none   &none   &none           &none   &none   &none
