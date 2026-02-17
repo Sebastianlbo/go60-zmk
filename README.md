@@ -51,10 +51,10 @@ without reaching for a physical mouse.
 ## Features
 
 - Homerow-mod (HRM) behaviors with tuned tapping terms per finger.
-- Layer-tap thumbs (hold 53 or 56) for instant access to the symbol layer without sacrificing Enter.
-- Combo bindings (hold 53 and 56) to enter navigation layer easily while keeping symbol and Enter keys in position.
+- Layer-tap thumbs (hold 55 or 58) for instant access to the symbol layer without sacrificing Enter.
+- Combo bindings (hold 55 and 58) to enter navigation layer easily while keeping symbol and Enter keys in position.
 - Mouse-key bindings on the symbol layer for mouse use without leaving the keyboard.
-- Combos for frequently used characters (e.g., underscore 52 and 57) built around my workflow.
+- Combos for frequently used characters (e.g., underscore 54 and 59) built around my workflow.
 
 ## Building and loading Firmware into the Go60
 
