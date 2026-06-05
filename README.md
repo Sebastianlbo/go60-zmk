@@ -61,5 +61,5 @@ without reaching for a physical mouse.
 1. Clone this repository (or your fork) and make any changes you need in
    `config/go60.keymap`.
 2. Push to GitHub to trigger the included “Build” workflow, or build locally
-   using `nix-build config -o combined`.
-   3.Flash the resulting `go60.uf2` artifact onto each side of the keyboard.
+    by doing just `./build.sh`.
+3. Flash the resulting `go60.uf2` artifact onto each side of the keyboard.

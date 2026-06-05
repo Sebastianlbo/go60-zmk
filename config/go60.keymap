@@ -40,7 +40,15 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&rgb_ug_status_macro>;
+            bindings = <&magic_layer_rgb>, <&rgb_ug_status_macro>;
+        };
+
+        lt_sym_rgb: lt_sym_rgb {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <167>;
+            bindings = <&sym_layer_rgb>, <&kp>;
         };
 
         bt_0: bt_0 { compatible = "zmk,behavior-tap-dance";
@@ -242,6 +250,39 @@
                 <&macro_tap   &mkp MB1>,
                 <&macro_release &kp LSHFT>;
       };
+
+        sym_layer_rgb: sym_layer_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &mo LAYER_Symbol>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(240,100,50)>,
+                <&macro_pause_for_release>,
+                <&macro_release &mo LAYER_Symbol>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>;
+        };
+
+        navi_layer_rgb: navi_layer_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &mo LAYER_Navi>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(120,100,50)>,
+                <&macro_pause_for_release>,
+                <&macro_release &mo LAYER_Navi>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>;
+        };
+
+        magic_layer_rgb: magic_layer_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &mo LAYER_Magic>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0,100,50)>,
+                <&macro_pause_for_release>,
+                <&macro_release &mo LAYER_Magic>,
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>;
+        };
     };
 
       combos {
@@ -256,7 +297,7 @@
         navigation_combo {
             timeout-ms = <2000>;
             key-positions = <55 58>;
-            bindings = <&mo LAYER_Navi>;
+            bindings = <&navi_layer_rgb>;
           };
         };
 
@@ -271,7 +312,7 @@
 
                             &magic LAYER_Magic 0 &kp LEFT  &kp RIGHT                                                        &kp DOWN   &kp UP  &rgb_ug RGB_TOG
 
-                                                           &kp BSPC  &lt LAYER_Symbol RET  &kp DEL                      &kp BSPC  &lt LAYER_Symbol RET  &kp SPACE 
+                                                           &kp BSPC  &lt_sym_rgb 0 RET  &kp DEL                      &kp BSPC  &lt_sym_rgb 0 RET  &kp SPACE 
             >;
         };
 
@@ -297,7 +338,7 @@
  
                                 &none   &none  &none                                                                      &none  &none  &none
 
-                                                           &kp BSPC  &none  &kp DEL                     &kp BSPC  &none  &kp SPACE 
+                                                           &none   &none  &none                     &none  &none  &none
             >;
         };
 
