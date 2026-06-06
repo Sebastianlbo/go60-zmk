@@ -1,0 +1,133 @@
+/ {
+    behaviors {
+        magic: magic {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&magic_layer_rgb>, <&rgb_ug_status_macro>;
+        };
+
+        lt_sym_rgb: lt_sym_rgb {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <167>;
+            bindings = <&sym_layer_rgb>, <&kp>;
+        };
+
+        bt_0: bt_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_select_0>, <&bt BT_DISC 0>;
+        };
+        bt_1: bt_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_select_1>, <&bt BT_DISC 1>;
+        };
+        bt_2: bt_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_select_2>, <&bt BT_DISC 2>;
+        };
+        bt_3: bt_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_select_3>, <&bt BT_DISC 3>;
+        };
+
+        HRM_LPinky: HRM_LPinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <210>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_LEFT_OPPOSING_KEYS>;
+        };
+        HRM_RPinky: HRM_RPinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <210>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_RIGHT_OPPOSING_KEYS>;
+        };
+        HRM_LRing: HRM_LRing {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <176>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_LEFT_OPPOSING_KEYS>;
+        };
+        HRM_RRing: HRM_RRing {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <176>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_RIGHT_OPPOSING_KEYS>;
+        };
+        HRM_LMiddle: HRM_LMiddle {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <139>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_LEFT_OPPOSING_KEYS>;
+        };
+        HRM_RMiddle: HRM_RMiddle {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <170>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_RIGHT_OPPOSING_KEYS>;
+        };
+        HRM_LIndex: HRM_LIndex {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <160>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_LEFT_OPPOSING_KEYS>;
+        };
+        HRM_RIndex: HRM_RIndex {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <160>;
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <GO60_HRM_RIGHT_OPPOSING_KEYS>;
+        };
+    };
+};
