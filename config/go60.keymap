@@ -18,15 +18,15 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "go60_key_groups.h"
 
-#include "go60_macros.dtsi"
-#include "go60_behaviors.dtsi"
-
 // layers
 #define LAYER_Base 0
 #define LAYER_Symbol 1
 #define LAYER_Navi 2
 #define LAYER_Magic 3
 #define LAYER_LOL 4
+
+#include "go60_macros.dtsi"
+#include "go60_behaviors.dtsi"
 
 / {
     input_processors {
