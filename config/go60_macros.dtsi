@@ -74,6 +74,46 @@
                 <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>;
         };
 
+        tap_space: tap_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SPACE>;
+        };
+
+        shift_esc: shift_esc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>,
+                  <&macro_tap   &kp ESC>,
+                  <&macro_release &kp LSHFT>;
+        };
+
+        lol_layer_rgb: lol_layer_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(225,100,20)>,
+                <&macro_tap &to LAYER_LOL>;
+        };
+
+        lol_layer_off: lol_layer_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>,
+                <&macro_tap &to LAYER_Base>;
+        };
+
+        lol_layer_off_enter: lol_layer_off_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>,
+                <&macro_tap &to LAYER_Base>,
+                <&macro_tap &kp ENTER>;
+        };
+
         magic_layer_rgb: magic_layer_rgb {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;

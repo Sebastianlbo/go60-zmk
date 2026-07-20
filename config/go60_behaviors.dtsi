@@ -41,6 +41,14 @@
             bindings = <&bt_select_3>, <&bt BT_DISC 3>;
         };
 
+        ht_lol_bp: ht_lol_bp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+
         HRM_LPinky: HRM_LPinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
